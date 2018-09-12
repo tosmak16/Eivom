@@ -1,0 +1,34 @@
+<section class="latest-movies">
+  <div class="latest-movies__header">
+    Latest Movies
+  </div>
+  <div class="latest-movies__gallery">
+    <div *ngFor='let movie of latestMovieList'>
+      <app-card [movie]='movie'></app-card>
+    </div>
+  </div>
+</section>
+
+
+<section class="popular-movies">
+  <div class="popular-movies__header">
+    Popular Movies
+  </div>
+  <div class="popular-movies__gallery">
+    <div *ngFor='let movie of popularMovieList'>
+      <app-card [movie]='movie'></app-card>
+    </div>
+  </div>
+</section>
+
+
+<section class="top-rated-movies">
+  <div class="top-rated-movies__header">
+    Top Rated Movies
+  </div>
+  <div class="top-rated-movies__gallery">
+    <div *ngFor='let movie of topRatedMovieList'>
+      <app-card [movie]='movie'></app-card>
+    </div>
+  </div>
+</section>

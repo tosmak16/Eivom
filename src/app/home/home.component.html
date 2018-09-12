@@ -1,90 +1,18 @@
-<div class="container">
-  <section class="navbar">
-    <div class="navber__left">
-      <div class="navbar__Logo">
-        EIVOM
-      </div>
-      <div class="navbar__browse-movie">Movies</div>
-      <div class="navbar__about">About</div>
-      <div class="navbar__contact">Contact us</div>
+<section class="header">
+  <h2 class="header__title">
+    Eivom: Find out about movies
+  </h2>
+  <p class="header__content-text">
+    If you're wondering what movie or TV show you should watch next, use the Eivom below. Create a free account.
+  </p>
+
+  <a href="#" class="header__content-link">View more</a>
+</section>
+
+<section class="feature-movies">
+  <div class="feature-movies__gallery">
+    <div *ngFor='let movie of movieList'>
+      <app-card [movie]='movie'></app-card>
     </div>
-    <div class="navber__right">
-      <div class="navbar__search-movie"> Search </div>
-    </div>
-  </section>
-
-
-  <section class="header">
-    <h2 class="header__title">
-      Eivom: Find out about movies
-    </h2>
-    <p class="header__content-text">
-      If you're wondering what movie or TV show you should watch next, use the Eivom below. Create a free account.
-    </p>
-
-    <a href="#" class="header__content-link">View more</a>
-  </section>
-
-
-  <section class="feature-movies">
-    <div class="feature-movies__gallery">
-      <div *ngFor='let movie of movieList' class="card">
-        <div class="card__side card__side--front">
-          <div class="card__picture card__picture--1">&nbsp;
-          </div>
-          <h3 class="card__heading">
-            <span class="card__heading-span card__heading-span--1">{{movie.title}}</span>
-          </h3>
-          <div class="card__details">
-            <ul>
-              <li>Rating</li>
-              <li>{{movie.vote_average}}</li>
-              <li>Popularity</li>
-              <li>{{movie.popularity}}</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card__side card__side--back card__side--back-1">
-          <div class="card__cta">
-            <div class="card__size-box">
-              <p class="card__size">{{movie.overview}}</p>
-            </div>
-            <a href="#popup" class="btn">View details</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <footer class="footer">
-
-    <div class="footer__navigation-links">
-      <ul class="footer__list">
-        <li class="footer__item">
-          <a href="#" class="footer__link">company </a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">contact us </a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">privacy policy </a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">terms </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer__logo-container">
-      <p class="footer__logo">Eivom</p>
-    </div>
-
-    <div class="footer__right">
-      <div class="footer__right-content">
-        Tosmak 2018
-      </div>
-    </div>
-  </footer>
-
-</div>
+  </div>
+</section>

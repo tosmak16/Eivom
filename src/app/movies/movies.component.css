@@ -1,0 +1,33 @@
+.popular-movies__gallery,
+.top-rated-movies__gallery,
+.latest-movies__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax( auto, 35rem));
+  justify-content: center;
+  margin-top: 5rem;
+  grid-gap: 1rem;
+}
+
+.popular-movies__header,
+.top-rated-movies__header,
+.latest-movies__header {
+  margin-top: 10rem;
+  justify-self: center;
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.popular-movies__header:hover,
+.top-rated-movies__header:hover,
+.latest-movies__header:hover {
+  color: #ffb900;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+.top-rated-movies,
+.popular-movies,
+.latest-movies {
+  display: grid;
+  justify-content: center;
+  grid-auto-columns: 1fr;
+}

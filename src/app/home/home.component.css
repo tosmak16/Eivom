@@ -1,27 +1,9 @@
-.container {
-  background-image: linear-gradient(to right, #232741, #273A35);
-  color: seashell;
-}
-
-.navbar {
-  background-color: #0B1015;
-  font-size: 1.5rem;
+.feature-movies__gallery {
   display: grid;
-  align-items: center;
-  grid-template-columns: minmax(auto, 90rem) auto;
-}
-
-.navber__left {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 10rem));
-  grid-template-rows: 5rem;
-  align-items: center;
-  margin-left: 5rem;
-}
-
-.navbar__Logo {
-  color: #ffb900;
-  font-size: 2rem;
+  grid-template-columns: repeat(auto, minmax( auto, 35rem));
+  justify-content: center;
+  margin-top: 5rem;
+  grid-gap: 1rem;
 }
 
 .header {
@@ -43,8 +25,7 @@
   font-weight: 700;
 }
 
-.header__content-link,
-.btn {
+.header__content-link {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -61,181 +42,8 @@
 
 .feature-movies__gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax( auto, 35rem));
+  grid-template-columns: repeat(auto-fit, minmax( auto, 35rem));
   justify-content: center;
   margin-top: 5rem;
   grid-gap: 1rem;
-}
-
-.card {
-  perspective: 150rem;
-  -moz-perspective: 150rem;
-  position: relative;
-  height: 50rem;
-  color: black;
-}
-
-.card__side {
-  width: 100%;
-  backface-visibility: hidden;
-  font-size: 1.6rem;
-  transition: all .9s ease;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  height: 50rem;
-  border-radius: 0.3rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-}
-
-.card__side--front {
-  background-color: #fff;
-}
-
-.card__side--back {
-  transform: rotateY(180deg);
-}
-
-.card__side--back-1 {
-  background-image: linear-gradient(to right bottom, #232741, #273A35);
-}
-
-.card:hover .card__side--front {
-  transform: rotateY(-180deg);
-}
-
-.card:hover .card__side--back {
-  transform: rotateY(0);
-}
-
-.card__picture {
-  background-size: cover;
-  background-blend-mode: screen;
-  height: 20rem;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.card__picture--1 {
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-}
-
-.card__heading {
-  position: absolute;
-  top: 10rem;
-  right: 2rem;
-  font-size: 2.8rem;
-  text-transform: uppercase;
-  color: #f7f7f7;
-  font-weight: 300;
-  text-align: right;
-  width: 75%;
-}
-
-.card__heading-span {
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  padding: 1rem 1.5rem;
-}
-
-.card__heading-span--1 {
-  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85));
-}
-
-.card__details {
-  padding: 3rem;
-}
-
-.card__details ul {
-  list-style: none;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.card__details ul li {
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-}
-
-.card__details ul li:not(:last-child) {
-  border-bottom: 1px solid #eee;
-}
-
-.card__cta {
-  text-align: center;
-  color: #fff;
-  margin-top: 20rem;
-}
-
-.card__size-box {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.card__size {
-  font-size: 1.5rem;
-  font-weight: 100;
-}
-
-footer {
-  background-color: #0B1015;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  margin-top: 5rem;
-  grid-template-columns: repeat(3, auto);
-}
-
-.footer__logo-container {
-  text-align: center;
-  padding: 10rem;
-}
-
-.footer__logo {
-  width: 15rem;
-  height: auto;
-}
-
-.footer__link:link,
-.footer__link:visited {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  display: inline-block;
-  text-transform: uppercase;
-  transition: all .2s;
-}
-
-.footer__link:hover,
-.footer__link:active {
-  color: #ffb900;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
-  transform: rotate(5deg) scale(1);
-}
-
-.footer__item {
-  display: inline-block;
-}
-
-.footer__item:not(:last-child) {
-  margin-right: 1rem;
-}
-
-.footer__list {
-  list-style: none;
-}
-
-.footer__right-content {
-  font-size: 1.6rem;
-  color: white;
-  margin-left: 20rem;
-}
-
-.footer__logo {
-  font-size: 4rem;
-  font-weight: 200;
-  color: #ffb900;
-  text-transform: uppercase;
 }

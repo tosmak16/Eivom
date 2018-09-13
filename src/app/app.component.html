@@ -10,6 +10,42 @@
     </div>
     <div class="navber__right">
       <div class="navbar__search-movie"> Search </div>
+
+      <div class="navigation">
+        <input type="checkbox" name="navigation_input" id="nav-toggle" class="navigation__checkbox">
+        <label for="nav-toggle" class="navigation__button">
+          <span class="navigation__button-icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">
+          &nbsp;
+        </div>
+
+        <div class="navigation__nav">
+
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="/movies" class="navigation__link">
+                Movies
+              </a>
+            </li>
+            <li class="navigation__item">
+
+              <a href="/home" class="navigation__link">
+
+                About </a>
+            </li>
+            <li class="navigation__item">
+
+              <a href="/home" class="navigation__link">
+                Contact us
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
     </div>
   </section>
   <router-outlet></router-outlet>

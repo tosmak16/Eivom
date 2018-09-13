@@ -51,7 +51,6 @@
 }
 
 footer {
-  margin-top: 5rem;
   background-color: #0B1015;
 }
 
@@ -114,6 +113,7 @@ footer {
   align-items: center;
   grid-template-columns: repeat(3, auto);
   margin: 2.5rem;
+  margin-top: 0;
   text-align: center;
 }
 
@@ -124,6 +124,8 @@ footer {
     align-items: center;
     grid-template-columns: 1fr;
     margin: 2.5rem;
+    margin-top: 0;
+    padding: 2rem 0;
     text-align: center;
   }
 }

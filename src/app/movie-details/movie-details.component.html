@@ -1,0 +1,42 @@
+<div class="movie">
+  <div class="movie__container">
+
+    <div class="movie__image-group">
+      <div class="movie__backdrop-image-container">
+        <img src="https://image.tmdb.org/t/p/original/{{movie?.backdrop_path}}" alt="backdrop" class="movie__backdrop-image" />
+      </div>
+      <div class="movie__postal-image-container">
+        <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt="poster" class="movie__postal-image">
+      </div>
+    </div>
+
+    <div class="movie__content">
+
+      <h2 class="movie__title">
+        {{movie?.title}}
+      </h2>
+
+      <p class="movie__tagline">
+        {{movie?.tagline ? movie?.tagline : 'A movie you need to watch'}}
+      </p>
+
+      <p class="movie__description">
+        {{movie?.overview}}
+      </p>
+
+      <p class="movie__status">
+        <span>Status: </span>{{movie?.status}}
+      </p>
+
+      <p class="movie__release-date">
+        <span>Release Date: </span>{{movie?.release_date}}
+      </p>
+      <div>
+        <span>Genre: </span>
+        <span *ngFor='let genre of movie?.genres'>{{genre.name}}, </span>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -19,4 +19,9 @@ export class MovieService {
   getTopRatedMovies() {
     return this.http.get('https://api.themoviedb.org/3/movie/top_rated?api_key=8045f8d7209227b589455e98ecf0616b');
   }
+
+
+  getMovieDetails(movieId) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=8045f8d7209227b589455e98ecf0616b`);
+  }
 }

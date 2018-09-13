@@ -9,7 +9,35 @@
       <div class="navbar__contact">Contact us</div>
     </div>
     <div class="navber__right">
-      <div class="navbar__search-movie"> Search </div>
+      <label for="searchModal-toggle" class="search-modal__btn-open">
+        <input type="checkbox" name="search-modal_input" id="searchModal-open" class="search-modal__checkbox" />
+      </label>
+      <div class="navbar__search-movie">
+        Search
+      </div>
+
+      <div class="search-modal">
+        <input type="checkbox" name="search-modal_input" id="searchModal-toggle" class="search-modal__checkbox" />
+        <label for="searchModal-toggle" class="search-modal__button">
+          <input type="checkbox" name="search-modal_input" id="searchModal-toggle" class="search-modal__checkbox" />
+          <span class="search-modal__button-icon">&nbsp;</span>
+        </label>
+        <div class="search-modal__container">
+          <div class="search-modal__form-group">
+            <input #searchInput (keyup.enter)="onEnter(searchInput.value)" type="text" placeholder="Search..." class="search-modal__input-text"
+            />
+          </div>
+          <div class="search-modal__event-gallary">
+            <a href="/movies/{{movie.id}}" *ngFor="let movie of movieList" class="search-modal__movie-group">
+              <img src="https://image.tmdb.org/t/p/w500/{{movie?.poster_path}}" alt="movie poster" class="search-modal__movie-image">
+              <div class="search-modal__movie-title-container">
+                <p class="search-modal__movie-title">{{movie?.title}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
 
       <div class="navigation">
         <input type="checkbox" name="navigation_input" id="nav-toggle" class="navigation__checkbox">

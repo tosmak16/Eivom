@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 import { MovieService } from './movies.services';
 
@@ -11,4 +11,23 @@ import { MovieService } from './movies.services';
 })
 export class AppComponent {
   title = 'eivom';
+  movieList = []
+
+
+  constructor(private movieService: MovieService) { }
+
+
+  ngOnInit() {
+
+
+  }
+
+  onEnter(value: string) {
+    this.movieService.searchMovie(value).subscribe(
+      (response) => {
+        this.movieList = response['results'].slice()
+      },
+      (error) => console.log(error)
+    )
+  }
 }

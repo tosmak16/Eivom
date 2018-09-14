@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movies.services'
+import { IMovie } from '../shared/movie.model'
 
 @Component({
   selector: 'app-home',
@@ -8,17 +9,16 @@ import { MovieService } from '../movies.services'
 })
 export class HomeComponent implements OnInit {
 
-  movieList = []
+  movieList: IMovie[]
 
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
     this.movieService.getPopularMovies().subscribe(
-      (response) => {
+      (response: IMovie[]) => {
         this.movieList = response['results'].slice()
-      },
-      (error) => console.log(error)
+      }
     )
 
   }

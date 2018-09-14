@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movies.services'
 
+import { IMovie } from '../shared/movie.model'
+
 
 @Component({
   selector: 'app-movies',
@@ -9,9 +11,9 @@ import { MovieService } from '../movies.services'
 })
 export class MoviesComponent implements OnInit {
 
-  popularMovieList = []
-  latestMovieList = []
-  topRatedMovieList = []
+  popularMovieList: IMovie[]
+  latestMovieList: IMovie[]
+  topRatedMovieList: IMovie[]
 
 
 
@@ -19,25 +21,20 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
     this.movieService.getPopularMovies().subscribe(
-      (response) => {
+      (response: IMovie) => {
         this.popularMovieList = response['results'].slice()
-      },
-      (error) => console.log(error)
+      }
     )
 
     this.movieService.getLatestMovies().subscribe(
-      (response) => {
+      (response: IMovie) => {
         this.latestMovieList = response['results'].slice()
-      },
-      (error) => console.log(error)
-    )
+      })
 
 
     this.movieService.getTopRatedMovies().subscribe(
-      (response) => {
+      (response: IMovie) => {
         this.topRatedMovieList = response['results'].slice()
-      },
-      (error) => console.log(error)
-    )
+      })
   }
 }

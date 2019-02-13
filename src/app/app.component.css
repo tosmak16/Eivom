@@ -352,7 +352,7 @@ footer {
 
 .search-modal__btn-open {
   height: 5rem;
-  width: 40rem;
+  width: 50px;
   z-index: 1000;
   cursor: pointer;
   background-color: transparent;

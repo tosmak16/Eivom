@@ -38,13 +38,6 @@ jobs:
 workflows:
   version: 2
 
-  pr-tests:
-    jobs:
-      - unit-tests:
-          filters:
-            branches:
-              only: /pull\/.*/
-
   test-and-deploy-staging:
     jobs:
       - unit-tests:
@@ -52,8 +45,6 @@ workflows:
             branches:
               only: master
       - deploy-staging:
-          requires:
-            - unit-tests
           filters:
             branches:
               only: master

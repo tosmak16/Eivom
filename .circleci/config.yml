@@ -1,0 +1,60 @@
+version: 2
+jobs:
+
+  
+  unit-tests:
+    docker:
+      - image: circleci/node:10.13.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}          
+      - run:
+          name: Run tests
+          command: npm test
+    
+  deploy-staging:
+    docker:
+      - image: circleci/node:10.13.0
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Push to S3
+          command: sh ./.circleci/deploy-staging.sh
+
+workflows:
+  version: 2
+
+  pr-tests:
+    jobs:
+      - unit-tests:
+          filters:
+            branches:
+              only: /pull\/.*/
+
+  test-and-deploy-staging:
+    jobs:
+      - unit-tests:
+          filters:
+            branches:
+              only: master
+      - deploy-staging:
+          requires:
+            - unit-tests
+          filters:
+            branches:
+              only: master
+

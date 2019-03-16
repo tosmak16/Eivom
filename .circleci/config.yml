@@ -40,10 +40,6 @@ workflows:
 
   test-and-deploy-staging:
     jobs:
-      - unit-tests:
-          filters:
-            branches:
-              only: master
       - deploy-staging:
           filters:
             branches:
